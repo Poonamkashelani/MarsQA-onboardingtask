@@ -1,12 +1,7 @@
 ﻿using OpenQA.Selenium;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using RelevantCodes.ExtentReports;
-
+using System;
+using System.Text;
 
 namespace MarsQA_1.Helpers
 {
@@ -39,11 +34,11 @@ namespace MarsQA_1.Helpers
         }
 
         //ExtentReports
+
         #region reports
+
         public static ExtentTest test;
         public static ExtentReports Extent;
-
-
 
         public static void ExtentReports()
         {
@@ -51,8 +46,6 @@ namespace MarsQA_1.Helpers
             Extent.LoadConfig(ConstantHelpers.ReportXMLPath);
         }
     }
-    #endregion
 
+    #endregion reports
 }
-
-

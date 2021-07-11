@@ -1,10 +1,5 @@
 ﻿using MarsQA_1.Helpers;
 using OpenQA.Selenium;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MarsQA_1.SpecflowPages.Pages
 {
@@ -19,9 +14,9 @@ namespace MarsQA_1.SpecflowPages.Pages
         private static IWebElement UpdateSkill => Driver.driver.FindElement(By.XPath("//input[@value='Update']"));
         private static IWebElement DeleteSkill => Driver.driver.FindElement(By.XPath("/html[1]/body[1]/div[1]/div[1]/section[2]/div[1]/div[1]/div[1]/div[3]/form[1]/div[3]/div[1]/div[2]/div[1]/table[1]/tbody[1]/tr[1]/td[3]/span[2]/i[1]"));
 
-       public static void SkillsSteps()
+        public static void SkillsSteps()
         {
-            for(int i=2;i<=4;i++)
+            for (int i = 2; i <= 4; i++)
             {
                 System.Threading.Thread.Sleep(5000);
                 SkillBtn.Click();
@@ -32,6 +27,7 @@ namespace MarsQA_1.SpecflowPages.Pages
                 AddBtn.Click();
             }
         }
+
         public static void EditSkillSteps()
         {
             System.Threading.Thread.Sleep(5000);
@@ -42,14 +38,13 @@ namespace MarsQA_1.SpecflowPages.Pages
             ChooseLevel.Click();
             Driver.driver.FindElement(By.XPath("//option[@value='Expert']")).Click();
             UpdateSkill.Click();
-            
         }
+
         public static void DeleteSkillSteps()
         {
             System.Threading.Thread.Sleep(5000);
             SkillBtn.Click();
             DeleteSkill.Click();
         }
-
     }
 }

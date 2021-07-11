@@ -1,6 +1,5 @@
 ﻿using MarsQA_1.Helpers;
 using MarsQA_1.SpecflowPages.Pages;
-using System;
 using TechTalk.SpecFlow;
 
 namespace MarsQA_1.Feature
@@ -22,14 +21,10 @@ namespace MarsQA_1.Feature
             Skills.EditSkillSteps();
         }
 
-
         [Given(@"User have logged in and clicks on Skills tab")]
         public void GivenUserHaveLoggedInAndClicksOnSkillsTab()
         {
             Skills.DeleteSkillSteps();
         }
-        
-        
-       
     }
 }

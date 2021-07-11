@@ -1,10 +1,5 @@
 ﻿using MarsQA_1.Helpers;
 using OpenQA.Selenium;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MarsQA_1.SpecflowPages.Pages
 {
@@ -19,10 +14,11 @@ namespace MarsQA_1.SpecflowPages.Pages
         private static IWebElement EditLangBtn => Driver.driver.FindElement(By.XPath("//td[@class='right aligned']//i[@class='outline write icon']"));
         private static IWebElement UpdateLangBtn => Driver.driver.FindElement(By.XPath("//input[@value='Update']"));
         private static IWebElement DeleteBtn => Driver.driver.FindElement(By.XPath("//i[@class='remove icon']"));
+
         public static void LanguagesSteps()
         {
-            for(int i = 2; i <= 4; i++)
-        {
+            for (int i = 2; i <= 4; i++)
+            {
                 System.Threading.Thread.Sleep(5000);
                 // LangBtn.Click();
                 Addnew.Click();
@@ -32,6 +28,7 @@ namespace MarsQA_1.SpecflowPages.Pages
                 Added.Click();
             }
         }
+
         public static void EditLanguage()
         {
             System.Threading.Thread.Sleep(5000);
@@ -42,11 +39,11 @@ namespace MarsQA_1.SpecflowPages.Pages
             Driver.driver.FindElement(By.XPath("//option[@value='Fluent']")).Click();
             UpdateLangBtn.Click();
         }
+
         public static void DeleteLang()
         {
             System.Threading.Thread.Sleep(5000);
             DeleteBtn.Click();
         }
-
     }
 }

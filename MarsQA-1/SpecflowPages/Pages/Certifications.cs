@@ -1,10 +1,5 @@
 ﻿using MarsQA_1.Helpers;
 using OpenQA.Selenium;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MarsQA_1.SpecflowPages.Pages
 {
@@ -15,13 +10,15 @@ namespace MarsQA_1.SpecflowPages.Pages
         private static IWebElement AddCerti => Driver.driver.FindElement(By.XPath("//input[@placeholder='Certificate or Award']"));
         private static IWebElement CertiFrom => Driver.driver.FindElement(By.XPath("//input[@placeholder='Certified From (e.g. Adobe)']"));
         private static IWebElement Year => Driver.driver.FindElement(By.XPath("//select[@name='certificationYear']"));
-       // private static IWebElement SelectYr => Driver.driver.FindElement(By.XPath("//option[@value='2013']"));
-       // private static IWebElement UpdatedSelectYr => Driver.driver.FindElement(By.XPath("//option[@value='2016']"));
+
+        // private static IWebElement SelectYr => Driver.driver.FindElement(By.XPath("//option[@value='2013']"));
+        // private static IWebElement UpdatedSelectYr => Driver.driver.FindElement(By.XPath("//option[@value='2016']"));
         private static IWebElement Added => Driver.driver.FindElement(By.XPath("//input[@value='Add']"));
+
         private static IWebElement EditCertiBtn => Driver.driver.FindElement(By.XPath("//tbody/tr/td[4]/span[1]/i[1]"));
         private static IWebElement UpdateCertiBtn => Driver.driver.FindElement(By.XPath("//input[@value='Update']"));
         private static IWebElement DeleteBtn => Driver.driver.FindElement(By.XPath("//tbody/tr/td[4]/span[2]/i[1]"));
-        
+
         public static void CeritificationsSteps()
         {
             for (int i = 2; i <= 4; i++)
@@ -37,22 +34,23 @@ namespace MarsQA_1.SpecflowPages.Pages
                 Added.Click();
             }
         }
+
         public static void EditCertification()
-                  
-            {
-                System.Threading.Thread.Sleep(5000);
-                CertiBtn.Click();
-                EditCertiBtn.Click();
-                AddCerti.Clear();
-                AddCerti.SendKeys(ExcelLibHelper.ReadData(2, "Certifications"));
-                CertiFrom.Clear();
-                CertiFrom.SendKeys(ExcelLibHelper.ReadData(2, "From"));
-                Year.SendKeys(ExcelLibHelper.ReadData(2, "Year"));
-                //UpdatedSelectYr.Click();
-                //  Driver.driver.FindElement(By.XPath("//option[@value='2016")).Click();
-                UpdateCertiBtn.Click();
-            
+
+        {
+            System.Threading.Thread.Sleep(5000);
+            CertiBtn.Click();
+            EditCertiBtn.Click();
+            AddCerti.Clear();
+            AddCerti.SendKeys(ExcelLibHelper.ReadData(2, "Certifications"));
+            CertiFrom.Clear();
+            CertiFrom.SendKeys(ExcelLibHelper.ReadData(2, "From"));
+            Year.SendKeys(ExcelLibHelper.ReadData(2, "Year"));
+            //UpdatedSelectYr.Click();
+            //  Driver.driver.FindElement(By.XPath("//option[@value='2016")).Click();
+            UpdateCertiBtn.Click();
         }
+
         public static void DeleteCertification()
         {
             CertiBtn.Click();
